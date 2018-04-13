@@ -45,3 +45,21 @@ var element =
   );
 
 ReactDOM.render(element, document.getElementById('app'));
+
+
+
+var Movie = React.createClass({
+  propTypes: {
+    movie: React.PropTypes.object.isRequired,
+  },
+  render: function () {
+    return (
+      React.createElement('li', {key: movie.id},
+        React.createElement('h2', {}, movie.title),
+        React.createElement('p',{}, movie.desc),
+        React.createElement('img',{src: movie.pict, alt: movie.alt})
+    )
+  }
+})
+
+var element = React.createElement(Movie, {key: movie.id, movie.title, movie.desc, movie.pict, movie.alt});
